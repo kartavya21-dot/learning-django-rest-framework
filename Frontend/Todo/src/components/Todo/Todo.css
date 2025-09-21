@@ -1,0 +1,156 @@
+/* General container */
+#to-do {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Input section */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.input-section-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input#title,
+textarea#description {
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea#description {
+  resize: none; /* Prevent user from resizing */
+  min-height: 80px;
+}
+
+/* Add button */
+#add-button {
+  padding: 10px 16px;
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#add-button:hover {
+  background-color: #45a049;
+}
+
+/* Task list container */
+#task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 50dvh;
+  overflow-y: auto;
+}
+
+/* Individual task */
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.checked{
+    text-decoration: line-through ;
+    color: grey;
+}
+
+.completed-task{
+    background-color: greenyellow;
+}
+
+.task div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.task h2 {
+    flex-grow: 18;
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.task p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.task-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* Checkbox styling */
+.task input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* Delete button */
+.task button {
+  margin-left: 12px;
+  padding: 6px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.task button:hover {
+  background-color: #e53935;
+}
+
+/* Responsive */
+@media screen and (max-width: 500px) {
+  #to-do {
+    padding: 16px;
+    margin: 20px;
+  }
+
+  .task {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .task input[type="checkbox"] {
+    align-self: flex-start;
+  }
+
+  .task button {
+    align-self: flex-end;
+  }
+}
